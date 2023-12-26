@@ -1,0 +1,11 @@
+DEPURACION DE LA BASE MYSQL ISIS
+
+
+1. el archivo delimiter.sql crea una funcion sql que busca y reemplaza 
+    las entidades html por los signos ascii correspondientes.
+
+2. el archivo depuration.queries opera sobre cada una de las columnas de la base y
+    busca con una expresion regular las entidades html.
+
+
+

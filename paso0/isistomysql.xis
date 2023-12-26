@@ -1,0 +1,124 @@
+<IsisScript>
+<section>
+
+	<!---<trace>On</trace>-->
+
+	<field action="cgi" tag="1000">id</field>
+	
+	<parm name=actab><pft>cat('C:\xampp\cgi-bin\OPAC\isisac.tab')</pft></parm>
+    <parm name=uctab><pft>cat('C:\xampp\cgi-bin\OPAC\isisuc.tab')</pft></parm>
+
+	<do task="mfnrange">
+
+		<field action=define tag=2000>Isis_Current</field>
+		<field action=define tag=2001>Isis_Total</field>
+		<field action=define tag=2002>Isis_ErrorInfo</field>
+
+		<parm name="db">C:\xampp\cgi-bin\bases\bases</parm>
+		<parm name="from"><pft>v1000</pft></parm>
+		<parm name="count">1</parm>
+		<parm name="gizmo">C:\xampp\cgi-bin\bases\html</parm>
+		
+		<loop>
+			<display>
+				<pft>
+				'{',
+				'"MFN" : "',mfn,'",',
+				'"tituloT" : "', v25^t+|;;;|,'",',
+				'"tituloP" : "', v25^p+|;;;|,'",',
+				'"tituloI" : "', v25^i+|;;;|,'",',
+				'"tituloU" : "', v25^u+|;;;|,'",',
+				'"autorN" : "', v28^n+|;;;|,'",',
+				'"autorG" : "', v28^g+|;;;|,'",',
+				'"autorF" : "', v28^f+|;;;|,'",',
+				'"autorA" : "', v28^a+|;;;|,'",',
+				'"autorH" : "', v28^h+|;;;|,'",',
+				'"autorB" : "', v28^b+|;;;|,'",',
+				'"autorALL" : "', v28,'",',
+				'"edicion" : "',v43,'",',
+				'"editorialL" : "',v44^l,'",',
+				'"editorialG" : "',v44^g,'",',
+				'"editorialE" : "',v44^e,'",',
+				'"editorialD" : "',v44^d,'",',
+				'"editorialT" : "',v44,'",',
+				'"anoedicion" : "',v46,'",',
+				'"colacion" : "',v50,'",',
+				'"coleccion" : "',v51,'",',
+				'"ISBN" : "',v300,'",',
+				'"notas" : "', v54+|;;;|,'",',
+				'"idioma" : "',v400,'",',
+				'"tipo" : "',v800,'",',
+				'"ubicacion" : "',v806,'",',
+				'"soporte" : "',v8,'",',
+				'"signaturaT" : "',v75^t,'",',
+				'"signaturaX" : "',v75^x,'",',
+				'"signaturaC" : "',v75^c,'",',
+				'"signaturaH" : "',v75^h,'",',
+				'"signatura1" : "',v75^1,'",',
+				'"signatura2" : "',v75^2,'",',
+				'"signatura3" : "',v75^3,'",',
+				'"signaturaP" : "',v75^p,'",',
+				'"signaturaS" : "',v75^s,'",',
+				'"signaturaA" : "',v75^a,'",',
+				'"signaturaV" : "',v75^v,'",',
+				'"signaturaN" : "',v75^n,'",',
+				'"signaturaE" : "',v75^e,'",',
+				'"signaturaJ" : "',v75^j,'",',
+				'"fechaI" : "',v900,'",',
+				'"fechaM" : "',v901,'",',
+				'"designacion" : "',v902,'",',
+				'"NU" : "',v903,'",',
+				'"NB" : "',v6,'",',
+				'"materia62" : "', if p(v62) then v62+|;;;| fi,'",'
+				'"materia700" : "', if p(v700) then v700+|;;;| fi,'",'
+				'"bib12" : "', if p(v70) then v70+|;;;| fi,'",'
+				'"bib1" : "', if p(v100) then v100+|;;;| fi,'",'
+				'"bib2" : "', if p(v101) then v101+|;;;| fi,'",'
+				'"bib3" : "', if p(v102) then v102+|;;;| fi,'",'
+				'"bib4" : "', if p(v103) then v103+|;;;| fi,'",'
+				'"bib5" : "', if p(v104) then v104+|;;;| fi,'",'
+				'"bib6" : "', if p(v105) then v105+|;;;| fi,'",'
+				'"bib7" : "', if p(v106) then v106+|;;;| fi,'",'
+				'"bib8" : "', if p(v107) then v107+|;;;| fi,'",'
+				'"bib9" : "', if p(v108) then v108+|;;;| fi,'",'
+				'"bib10" : "', if p(v109) then v109+|;;;| fi,'",'
+				'"bib11" : "', if p(v110) then v110+|;;;| fi,'",'
+				'"bib14" : "', if p(v111) then v111+|;;;| fi,'",'
+				'"bib91" : "', if p(v112) then v112+|;;;| fi,'",'
+				'"bib92" : "', if p(v113) then v113+|;;;| fi,'",'
+				'"bib93" : "', if p(v114) then v114+|;;;| fi,'",'
+				'"bib94" : "', if p(v115) then v115+|;;;| fi,'",'
+				'"bib95" : "', if p(v116) then v116+|;;;| fi,'",'
+				'"bib96" : "', if p(v117) then v117+|;;;| fi,'",'
+				'"bib97" : "', if p(v118) then v118+|;;;| fi,'",'
+				'"bib98" : "', if p(v119) then v119+|;;;| fi,'",'
+				'"bib99" : "', if p(v120) then v120+|;;;| fi,'",'
+				'"bib89" : "', if p(v122) then v122+|;;;| fi,'",'
+				'"bib90" : "', if p(v123) then v123+|;;;| fi,'",'
+				'"bib100" : "', if p(v124) then v124+|;;;| fi,'",'
+				'"bib101" : "', if p(v125) then v125+|;;;| fi,'",'
+				'"bib102" : "', if p(v126) then v126+|;;;| fi,'",'
+				'"bib103" : "', if p(v127) then v127+|;;;| fi,'",'
+				'"bib104" : "', if p(v128) then v128+|;;;| fi,'",'
+				'"v129" : "', if p(v129) then v129+|;;;| fi,'",'
+				'"v130" : "', if p(v130) then v130+|;;;| fi,'",'
+				'"v131" : "', if p(v131) then v131+|;;;| fi,'",'
+				'"v132" : "', if p(v132) then v132+|;;;| fi,'",'
+				'"v133" : "', if p(v133) then v133+|;;;| fi,'",'
+				'"v134" : "', if p(v134) then v134+|;;;| fi,'",'
+				'"v135" : "', if p(v135) then v135+|;;;| fi,'",'
+				'"v136" : "', if p(v136) then v136+|;;;| fi,'",'
+				'"v137" : "', if p(v137) then v137+|;;;| fi,'",'
+				'"v138" : "', if p(v138) then v138+|;;;| fi,'",'
+				'"v139" : "', if p(v139) then v139+|;;;| fi,'",'
+				'"v140" : "', if p(v140) then v140+|;;;| fi,'"'
+				'}'
+				</pft>
+			</display>
+		</loop>
+		
+		<display><pft>if (v2001 = '0') then ,'000',v2002 fi</pft></display>
+	</do>
+  
+</section>
+</IsisScript>
